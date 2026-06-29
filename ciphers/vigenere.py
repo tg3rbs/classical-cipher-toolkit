@@ -3,7 +3,7 @@ ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 def clean_text(text):
     return "".join(char.upper() for char in text if char.isalpha())
 
-def encrypt(text, key):
+def vigenere_encrypt(text, key):
     text = clean_text(text)
     key = clean_text(key)
     result = ""
@@ -15,7 +15,7 @@ def encrypt(text, key):
 
     return result
 
-def decrypt(text, key):
+def vigenere_decrypt(text, key):
     text = clean_text(text)
     key = clean_text(key)
     result = ""
