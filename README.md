@@ -1,23 +1,21 @@
 # Classical Cipher Toolkit
 
-A Python command-line application that implements several classical encryption algorithms. This project demonstrates modular programming, unit testing with pytest, and the fundamentals of classical cryptography.
+A Python command-line toolkit implementing five classical cryptographic ciphers with a modular cipher interface and automated tests.
 
-## Features
+## Supported Ciphers
 
-- Caesar Cipher
-- Vigenère Cipher
-- Atbash Cipher
-- Affine Cipher
-- Rail Fence Cipher
-- Encrypt and decrypt messages
-- Interactive command-line interface
-- Automated unit tests with pytest
+- **Caesar Cipher** — substitution using a fixed alphabetic shift
+- **Vigenère Cipher** — polyalphabetic substitution using a repeating key
+- **Atbash Cipher** — substitution based on a reversed alphabet
+- **Affine Cipher** — substitution using an affine transformation over the alphabet
+- **Rail Fence Cipher** — transposition using a configurable number of rails
+
+Each cipher supports encryption and decryption through the command-line interface.
 
 ## Project Structure
 
-```
+```text
 classical-cipher-toolkit/
-│
 ├── ciphers/
 │   ├── __init__.py
 │   ├── caesar.py
@@ -25,49 +23,42 @@ classical-cipher-toolkit/
 │   ├── atbash.py
 │   ├── affine.py
 │   └── rail_fence.py
-│
 ├── tests/
 │   ├── __init__.py
 │   └── test_ciphers.py
-│
 ├── main.py
 ├── README.md
 └── requirements.txt
 ```
+
+Cipher implementations are separated into individual modules, while `main.py` provides the interactive command-line interface.
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/classical-cipher-toolkit.git
-```
-
-Move into the project folder:
-
-```bash
+git clone https://github.com/tg3rbs/classical-cipher-toolkit.git
 cd classical-cipher-toolkit
 ```
 
-## Running the Program
+Install the required dependencies:
 
-Run the application:
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+## Usage
+
+Run the command-line interface:
 
 ```bash
 python3 main.py
 ```
 
-## Running the Tests
+Example:
 
-Run all unit tests with:
-
-```bash
-python3 -m pytest
-```
-
-## Example
-
-```
+```text
 Choose a cipher
 
 1. Caesar
@@ -85,21 +76,19 @@ Enter shift: 3
 Result: KHOOR
 ```
 
-## Technologies Used
+## Testing
 
-- Python 3
-- pytest
+Run the automated test suite with pytest:
 
-## Future Improvements
+```bash
+python3 -m pytest
+```
 
-- Playfair Cipher
-- Hill Cipher
-- Columnar Transposition Cipher
-- Frequency analysis tools
-- File encryption support
-- Graphical user interface (GUI)
+Tests cover encryption and decryption behavior across the implemented cipher modules.
 
-## Author
+## Security Considerations
 
-Theo Gerber
+These classical ciphers are historically significant cryptographic algorithms but provide no meaningful security against modern cryptanalysis.
+
+This toolkit is intended for studying classical cryptographic transformations and their implementation rather than protecting sensitive information.
 
